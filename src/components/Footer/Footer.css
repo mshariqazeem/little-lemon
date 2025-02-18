@@ -1,0 +1,30 @@
+footer {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  footer img {
+    height: 150px;
+  }
+  
+  footer ul {
+    list-style: none;
+  }
+  
+  footer ul li {
+    margin-bottom: 8px;
+  }
+  
+  footer ul li a {
+    color: white;
+    font-size: 14px;
+  }
+  
+  footer ul li a:hover {
+    text-decoration: underline;
+  }
+  

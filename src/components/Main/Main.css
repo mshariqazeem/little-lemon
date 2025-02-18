@@ -1,0 +1,8 @@
+main {
+    min-height: 70vh; /* Ensures it takes up space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  

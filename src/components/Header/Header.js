@@ -1,9 +1,10 @@
-import Nav from "./Nav";
+import './Header.css';
+import Nav from "../Nav/Nav";
 
 function Header() {
     return (
       <header>
-        <img src="./Logo.svs"></img>
+        <img src="./Logo.svg" alt="Logo"/>
         <Nav/>
       </header>
     );
