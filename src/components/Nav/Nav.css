@@ -1,18 +1,19 @@
 nav ul {
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav ul li {
-    list-style: none;
-  }
-  
-  nav ul li a {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  nav ul li a:hover {
-    color: #ff6600;
-  }
-  
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  font-family: 'Karla';
+  font-weight: bold;
+  text-decoration: none;
+  color: #495E57;
+}
+
+nav ul li a:hover {
+  color: #EE9972;
+}

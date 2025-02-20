@@ -1,0 +1,86 @@
+.specials-container {
+    flex: 1;
+    background-color: #f8f8f8;
+    justify-items: center;
+    align-content: center;
+    padding: 40px 20px;
+}
+
+.specials-heading, .specials-content {
+    display: flex;
+    flex-grow: 1;
+    min-width: 780px;
+    max-width: 780px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.specials-heading {
+    margin-bottom: 40px;
+}
+
+.specials-heading h1 {
+    font-weight: normal;
+    font-size: 50px;
+    line-height: .8;
+    color: black;
+}
+
+.specials-heading button {
+    background-color: #F4CE14;
+    color: black;
+    font-family: 'Karla';
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 16px;
+    border: 0px;
+}
+
+.specials-content .specials {
+    width: 240px;
+    height: 380px;
+    background-color: #EDEFEE;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.specials-content .specials img {
+    width: 100%;
+    height: 160px;
+    border: solid 1px black;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.specials-text {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+}
+
+.specials-text h4 {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: #EE9972;
+}
+
+.specials-text p {
+    font-family: 'Karla';
+    font-size: 15px;
+    color: gray
+}
+
+.specials-text h5 {
+    font-family: 'Karla';
+    font-size: 15px;
+    margin-top: auto;
+}
