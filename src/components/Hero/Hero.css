@@ -46,12 +46,19 @@
 .hero-text-container button {
     background-color: #F4CE14;
     color: black;
-    font-family: 'Karla';
+    font-family: 'Karla', sans-serif;
     font-size: 15px;
     font-weight: bold;
     padding: 15px 25px;
     border-radius: 16px;
-    border: 0px;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-text-container button:hover {
+    background-color: #EE9972;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero img {
