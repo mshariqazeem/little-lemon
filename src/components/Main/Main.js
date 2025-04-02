@@ -1,38 +1,79 @@
 import './Main.css';
+import { useEffect, useReducer } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
-import { Routes, Route } from 'react-router-dom';
 import ReservationPage from '../ReservationPage/ReservationPage';
-import { useReducer } from 'react';
+import ConfirmedBooking from '../ConfirmedBooking/ConfirmedBooking';
+import { fetchAPI, submitAPI } from '../../utils/api';
 
-const initializeTimes = () => {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-};
-
+// ✅ Reducer to manage available times
 const timesReducer = (state, action) => {
   switch (action.type) {
+    case "INITIALIZE_TIMES":
     case "UPDATE_TIMES":
-      return ["17:00", "18:00", "19:00", "20:00"];
+      return action.payload;
     default:
       return state;
   }
 };
 
-export { initializeTimes, timesReducer };
+// ✅ Exported for testing
+const initializeTimes = async () => {
+  const today = new Date();
+  return fetchAPI(today);
+};
 
 function Main() {
+  const navigate = useNavigate();
+  const [availableTimes, dispatch] = useReducer(timesReducer, []);
 
-  const [availableTimes, dispatch] = useReducer(timesReducer, [], initializeTimes);
+  // ✅ Initialize times on mount
+  useEffect(() => {
+    const loadTimes = async () => {
+      const times = await initializeTimes();
+      dispatch({ type: "INITIALIZE_TIMES", payload: times });
+    };
+    loadTimes();
+  }, []);
+
+  // ✅ Update times when date changes
+  const updateTimes = (dateStr) => {
+    const date = new Date(dateStr);
+    const times = fetchAPI(date);
+    dispatch({ type: "UPDATE_TIMES", payload: times });
+  };
+
+  // ✅ Submit form and redirect
+  const submitForm = (formData) => {
+    const success = submitAPI(formData);
+    if (success) {
+      navigate("/confirmed");
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  };
 
   return (
-    <>
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/reservations" element={<ReservationPage availableTimes={availableTimes} dispatch={dispatch} />}></Route>
-        </Routes>
-      </main>
-    </>
+    <main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/reservations"
+          element={
+            <ReservationPage
+              availableTimes={availableTimes}
+              updateTimes={updateTimes}
+              submitForm={submitForm}
+            />
+          }
+        />
+        <Route path="/confirmed" element={<ConfirmedBooking />} />
+      </Routes>
+    </main>
   );
 }
 
 export default Main;
+
+// ✅ Export for unit testing
+export { initializeTimes, timesReducer };

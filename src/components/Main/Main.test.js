@@ -1,13 +1,18 @@
+// ✅ Now import after mock is set
 import { initializeTimes, timesReducer } from './Main';
+import { fetchAPI } from '../../utils/api';
 
-test("initializeTimes returns correct initial state", () => {
-  const times = initializeTimes();
-  expect(times).toEqual(["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]);
+test("initializeTimes returns correct available times from fetchAPI", async () => {
+  const times = await initializeTimes();
+  expect(times.length).toBeGreaterThan(0);
 });
 
-test("updateTimes returns the same state for now", () => {
-  const initialState = ["17:00", "18:00", "19:00", "20:00"];
-  const action = { type: "UPDATE_TIMES", payload: "2023-02-18" };
+test("timesReducer handles UPDATE_TIMES correctly", () => {
+  const initialState = [];
+  const action = {
+    type: "UPDATE_TIMES",
+    payload: ["18:00", "19:00", "20:00"]
+  };
   const updatedState = timesReducer(initialState, action);
-  expect(updatedState).toEqual(initialState);
+  expect(updatedState).toEqual(["18:00", "19:00", "20:00"]);
 });
