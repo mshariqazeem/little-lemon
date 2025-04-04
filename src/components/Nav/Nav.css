@@ -1,6 +1,11 @@
+/*Nav.css*/
+
 nav ul {
   display: flex;
+  flex-wrap: nowrap;
   gap: 20px;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 nav ul li {

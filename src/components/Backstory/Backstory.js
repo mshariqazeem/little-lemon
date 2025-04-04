@@ -10,7 +10,7 @@ function Backstory(){
                             <h2>Chicago</h2>
                             <p>Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. The restaurant features a locally-sourced menu with daily specials.</p>
                     </section>
-                    <section className="backstory-image-container">
+                    <section className="backstory-image">
                         <img src="./restaurant.jpg" alt="Restaurant's seating area" className="img-back"/>
                         <img src="./restaurant-chef.jpg" alt="Restaurant's Chef" className="img-front"/>
                 </section>

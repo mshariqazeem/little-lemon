@@ -1,3 +1,5 @@
+/*Backstory.css*/
+
 .backstory-container {
     flex: 1;
     background-color: #f8f8f8;
@@ -43,7 +45,7 @@
     margin-bottom: 20px;
 }
 
-.backstory-image-container {
+.backstory-image {
     position: relative;
     width: 450px;
     height: 250px;

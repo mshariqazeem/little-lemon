@@ -1,12 +1,26 @@
+/* App.css */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body, #root, .app-container {
+html, body, #root {
+  width: 100%;
+  min-width: 100vw;
+  overflow-x: auto;
+  height: 100%;
+}
+
+body {
+  font-family: 'Markazi Text';
+}
+
+.app-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  font-family: 'Markazi Text';
+  min-height: 100vh;
+  width: 100%;
+  min-width: 100vw;
 }

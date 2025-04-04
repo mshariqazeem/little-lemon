@@ -4,9 +4,12 @@
   align-items: center;
   padding: 10px 20px;
   background-color: #f8f8f8;
+  width: 100%;
+  white-space: nowrap;
 }
 
 .page-header img {
   height: 50px;
   margin-right: 100px;
+  flex-shrink: 0;
 }
